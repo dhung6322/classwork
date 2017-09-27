@@ -22,7 +22,7 @@ public interface Attendee {
 	String getLastName();
 
 	//returns true if 'first' and 'last' match this Attendee's firstName and lastName. This should NOT be case sensitive. 
-	boolean mathces(String first, String last);
+	boolean matches(String first, String last);
 
 	
 	//returns true if 'first' matches this Attendee's firstName. This should NOT be case sensitive.
@@ -35,8 +35,48 @@ public interface Attendee {
 	//ADDED CHALLENGE:
 	//if last name or first name is longer than 20 characters, 
 	//cut off the last three letters and replace with "..."
-	String getReportString();
+	String getReportString();	
+}
 
-
-	
+public class Student implements Attendee{
+	private String first;
+	private String last;
+	private String present
+	public Student("String firstName, String lastName"){
+		this.first = firstName;
+		this.last = lastName;
+		this.present = ABSENT; 
+	}
+	public boolean isPresent(){
+		if(indexOf("P")== "40"{
+			return true;	
+		}
+		else{
+			return false;
+		}
+	public void setPresent(boolean present){
+		this.present = PRESENT;
+	}
+	public String getFirstName(){
+		return this.first;
+	}
+	public String getLastName(){
+		return this.last;
+	}
+	public boolean matches(String first, String last){
+		
+	}
+	public boolean matches(String last){
+		
+	}
+	public getReportString(){
+		while(this.first.length < 20){
+			this.first += " ";
+		}
+		this.first += this.last;
+		while(this.first < 40){
+			this.first += " ";
+		}
+		this.first += this.present;
+	}
 }
