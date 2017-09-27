@@ -35,7 +35,8 @@ public interface Attendee {
 	//ADDED CHALLENGE:
 	//if last name or first name is longer than 20 characters, 
 	//cut off the last three letters and replace with "..."
-	String getReportString();	
+	String getReportString();
+	
 }
 
 
