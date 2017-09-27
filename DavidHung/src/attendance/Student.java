@@ -36,6 +36,11 @@ public class Student implements Attendee {
 		while(this.first.length() < 40){
 			this.first += " ";
 		}
-		return this.first += this.present;
+		if(this.isPresent()) {
+			return this.first += "PRESENT";
+		}
+		else {
+			return this.first += "ABSENT";
+		}
 	}
 	}
