@@ -48,7 +48,7 @@ public class Student implements Attendee{
 		this.present = ABSENT; 
 	}
 	public boolean isPresent(){
-		if(indexOf("P")== "40"{
+		if(indexOf("P") == "40"){
 			return true;	
 		}
 		else{
