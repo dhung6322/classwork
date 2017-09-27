@@ -33,9 +33,9 @@ public class Student implements Attendee {
 			this.first += " ";
 		}
 		this.first += this.last;
-		while(this.first < 40){
+		while(this.first.length() < 40){
 			this.first += " ";
 		}
-		this.first += this.present;
+		return this.first += this.present;
 	}
 	}
