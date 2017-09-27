@@ -12,7 +12,7 @@ public class Student implements Attendee {
 	}
 	public boolean isPresent(){
 		return present;
-	public void setPresent(boolean present) {
+	public void setPresent(boolean present) {	
 		this.present = present;
 	}
 	public String getFirstName(){
