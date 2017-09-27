@@ -12,23 +12,24 @@ public class Student implements Attendee {
 	}
 	public boolean isPresent(){
 		return present;
+	}
 	public void setPresent(boolean present) {	
 		this.present = present;
 	}
 	public String getFirstName(){
-		return firstName;
+		return first;
 	}
 	public String getLastName(){
-		return lastName;
+		return last;
 	}
 	public boolean matches(String first, String last) {
-		return first.toLowerCase().equals(firstName.toLowerCase()) && last.toLowerCase().equals(lastName.toLowerCase());
+		return first.toLowerCase().equals(first.toLowerCase()) && last.toLowerCase().equals(last.toLowerCase());
 	}
 	public boolean matches(String last) {
-		return last.toLowerCase().equals(lastName.toLowerCase());
+		return last.toLowerCase().equals(last.toLowerCase());
 	}
 	public String getReportString() {
-		while(this.first.length < 20){
+		while(this.first.length() < 20){
 			this.first += " ";
 		}
 		this.first += this.last;
@@ -38,6 +39,3 @@ public class Student implements Attendee {
 		this.first += this.present;
 	}
 	}
-
-
-}
