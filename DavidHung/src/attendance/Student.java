@@ -25,7 +25,7 @@ public class Student implements Attendee {
 		return first.toLowerCase().equals(firstName.toLowerCase()) && last.toLowerCase().equals(lastName.toLowerCase());
 	}
 	public boolean matches(String last) {
-		
+		return last.toLowerCase().equals(lastName.toLowerCase());
 	}
 	public String getReportString() {
 		while(this.first.length < 20){
