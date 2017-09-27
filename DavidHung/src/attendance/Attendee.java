@@ -41,8 +41,8 @@ public interface Attendee {
 public class Student implements Attendee{
 	private String first;
 	private String last;
-	private String present
-	public Student("String firstName, String lastName"){
+	private String present;
+	public Student(String firstName, String lastName){
 		this.first = firstName;
 		this.last = lastName;
 		this.present = ABSENT; 
