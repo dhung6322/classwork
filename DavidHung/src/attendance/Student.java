@@ -38,4 +38,4 @@ public class Student implements Attendee {
 		}
 		return this.first += this.present;
 	}
-}
+	}
