@@ -8,9 +8,27 @@ public class ArraysMain {
 	
 	public ArraysMain() {
 		testArray = new int[50];
-		populate(testArray);
-		countOccurences(testArray,2,12);
+		//populate(testArray);
+		//countOccurences(testArray,2,12);
+		populate1ToN(testArray);
+		shuffle(testArray);
 		System.out.print(Arrays.toString(testArray));
+	}
+	private void shuffle(int[] arr) {
+		for(int i = 0; i < arr.length; i++) {
+			swap(arr,i,(int)(Math.random()*arr.length));
+		}
+	}
+	//swaps elements at i and j
+	private void swap(int[] arr, int i, int j) {
+		int placeholder = arr[i];
+		arr[i] = arr[j];
+		arr[j] = placeholder;
+	}
+	private void populate1ToN(int[] arr) {
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = (i+1);
+		}
 	}
 	private void countOccurences(int[] arr, int start, int end) {
 		int[] counter = new int [end - start + 1];
