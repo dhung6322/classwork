@@ -4,15 +4,39 @@ import java.util.Arrays;
 
 public class ArraysMain {
 
-	private int[] testArray;
+	private String[] suits;
+	private String[] values;
 	
 	public ArraysMain() {
-		testArray = new int[50];
+		suits = new String[4];
+		suits[0] = "Clubs";
+		suits[1] = "Hearts";
+		suits[2] = "Diamonds";
+		suits[3] = "Spades";
+		for(int i = 0; i < values.length; i++) {
+			values[i] = ""+(i+1);
+		}
+		values[0] = "Ace";
+		values[12] = "King";
+		values[11] = "Queen";
+		values[10] = "Jack";
+		printDeck();
 		//populate(testArray);
 		//countOccurences(testArray,2,12);
-		populate1ToN(testArray);
-		shuffle(testArray);
-		System.out.print(Arrays.toString(testArray));
+		//populate1ToN(testArray);
+		//shuffle(testArray);
+		//System.out.print(Arrays.toString(testArray));
+	}
+	private String printDeck() {
+		String[] deck = new String[52];
+		int index = 0;
+		for(String suit: suits) {
+			for(String value: values) {
+				deck[index] = (value + " of " + suit);
+				index++;
+			}
+		}
+		return deck; 
 	}
 	private void shuffle(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
