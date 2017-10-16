@@ -9,7 +9,19 @@ public class ArraysMain {
 	public ArraysMain() {
 		testArray = new int[50];
 		populate(testArray);
+		countOccurences(testArray,2,12);
 		System.out.print(Arrays.toString(testArray));
+	}
+	private void countOccurences(int[] arr, int start, int end) {
+		int[] counter = new int [end - start + 1];
+		for(int value: arr)
+		{
+			counter[value - start]++;
+		}
+		for(int i = 0; i < counter.length; i++) {
+			System.out.println("The value " + (i + start) + " was rolled " 
+					+ counter[i] + " times");
+		}
 	}
 	//this method populates arr with results from rolling 2 dice
 	private void populate(int[] arr) {
