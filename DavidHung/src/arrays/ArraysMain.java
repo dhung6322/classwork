@@ -1,30 +1,44 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class ArraysMain {
 
 	private int[] testArray;
 	
 	public ArraysMain() {
+		testArray = new int[50];
+		populate(testArray);
+		System.out.print(Arrays.toString(testArray));
+	}
+	//this method populates arr with results from rolling 2 dice
+	private void populate(int[] arr) {
+		for(int i = 0; i < arr.length; i ++) {
+			arr[i] = diceRoll(2);
+		}
+	}
+
+	public void arrayNotes() {
 		//Two ways to construct an array:
-		int[] firstWay = {0,1,2,3,4,5};
-		//this way will only work with the declaration
-		/* will not work:
-		firstWay = {6,7,8,9,10}
-		*/
-		
-		String[] secondWay = new String[5];
-		//you have to add them manually at each index
-		//secondWay[0] = 1;
-		//secondWay[1] = 10;
-		
-		//TWO WAYS TO ITERATE THROUGH AN ARRAY;
-		for(int i = 0; i < secondWay.length; i ++) {
-			System.out.println("The #" + i + " element is " + secondWay[i]);
-		}
-		//"For each int in secondWay"
-		for(String value: secondWay) {
-			System.out.println("Element is " + value);
-		}
+				int[] firstWay = {0,1,2,3,4,5};
+				//this way will only work with the declaration
+				/* will not work:
+				firstWay = {6,7,8,9,10}
+				*/
+				
+				String[] secondWay = new String[5];
+				//you have to add them manually at each index
+				//secondWay[0] = 1;
+				//secondWay[1] = 10;
+				
+				//TWO WAYS TO ITERATE THROUGH AN ARRAY;
+				for(int i = 0; i < secondWay.length; i ++) {
+					System.out.println("The #" + i + " element is " + secondWay[i]);
+				}
+				//"For each int in secondWay"
+				for(String value: secondWay) {
+					System.out.println("Element is " + value);
+				}
 	}
 
 	public static void main(String[] args) {
