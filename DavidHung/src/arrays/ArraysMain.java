@@ -8,6 +8,15 @@ public class ArraysMain {
 	private String[] values;
 	
 	public ArraysMain() {
+		warmUpMethods();
+	}
+	private void warmUpMethods() {
+		int[] orderTest = {1,2,3,4,5,6,7,8,9,10};
+		reverseOrder(orderTest);
+		System.out.println(Arrays.toString(orderTest));
+		System.out.println(Arrays.toString(subArray(orderTest,3,4)));
+	}
+	public void cardMethods() {
 		suits = new String[4];
 		suits[0] = "Clubs";
 		suits[1] = "Hearts";
@@ -21,11 +30,6 @@ public class ArraysMain {
 		values[11] = "Queen";
 		values[10] = "Jack";
 		printDeck();
-		//populate(testArray);
-		//countOccurences(testArray,2,12);
-		//populate1ToN(testArray);
-		//shuffle(testArray);
-		//System.out.print(Arrays.toString(testArray));
 	}
 	private String[] printDeck() {
 		String[] deck = new String[52];
@@ -39,12 +43,16 @@ public class ArraysMain {
 		return deck;
 	}
 	public void reverseOrder(int[] arr) {
-		for(int i = 0; i < arr.length; i++) {
-			swap(arr,i,arr.length-i);
+		for(int i = 0; i < arr.length/2; i++) {
+			swap(arr,i,arr.length-1-i);
 		}
 	}
 	public int[] subArray(int[] arr, int psn, int length) {
-	
+	int[] sub = new int[length];
+	for(int i = 0; i <length; i ++) {
+		sub[i] = arr[i+psn];
+	}
+	return sub;
 	}
 	private void shuffle(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
