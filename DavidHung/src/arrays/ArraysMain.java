@@ -38,6 +38,14 @@ public class ArraysMain {
 		}
 		return deck; 
 	}
+	public void reverseOrder(int[] arr) {
+		for(int i = 0; i < arr.length; i++) {
+			swap(arr,i,arr.length-i);
+		}
+	}
+	public int[] subArray(int[] arr, int psn, int length) {
+	
+	}
 	private void shuffle(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
 			swap(arr,i,(int)(Math.random()*arr.length));
