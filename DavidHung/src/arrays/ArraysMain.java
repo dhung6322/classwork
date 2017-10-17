@@ -27,16 +27,16 @@ public class ArraysMain {
 		//shuffle(testArray);
 		//System.out.print(Arrays.toString(testArray));
 	}
-	private String printDeck() {
+	private String[] printDeck() {
 		String[] deck = new String[52];
 		int index = 0;
 		for(String suit: suits) {
-			for(String value: values) {
-				deck[index] = (value + " of " + suit);
+			for(String value : values) {
+				deck[index] = value + " of "+ suit;
 				index++;
 			}
 		}
-		return deck; 
+		return deck;
 	}
 	public void reverseOrder(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
