@@ -8,7 +8,50 @@ public class ArraysMain {
 	private String[] values;
 	
 	public ArraysMain() {
-		warmUpMethods();
+		tuesdayMethods();
+	}
+	private void tuesdayMethods() {
+		int[] orderTest = {1,2,3,4,5,1,6,7,8,9,10,11,12,13,2,4,1,2,3,4,5,6,7,8,9};
+		//cycleThrough(orderTest, 5);
+		//System.out.println(Arrays.toString(orderTest));
+		System.out.println(longestConsecutiveSequence(orderTest) + " is the longest consecutive sequence");
+	}
+	private int longestConsecutiveSequence(int[] arr) {
+		int sum = 1;
+		int currentCount = 1;
+		for(int i = 0; i < arr.length; i++) {
+			while(i + currentCount < arr.length && 
+				isConsecutive(arr,i,i+currentCount)) {
+				currentCount ++;
+			}
+			if(currentCount > sum) {
+				sum = currentCount;
+			}
+			i = i + currentCount - 1;
+			currentCount = 1;
+		}
+		return sum;
+	}
+	private boolean isConsecutive(int[] arr, int start, int end) {
+		for(int i = start; i < end; i++) {
+			if(arr[i] + 1 != arr[i+1]) {
+				return false;
+			}	
+		}
+		return true;
+	}
+
+	private void cycleThrough(int[] orderTest, int n) {
+		for(int i = 0; i < n; i++) {
+			frontToBack(orderTest);
+		}
+	}
+	private void frontToBack(int[] arr) {
+		int x = arr[0];
+		for (int i = 0; i < arr.length-1; i++) {
+			arr[i] = arr[i+1];
+		}
+		arr[arr.length-1] = x;
 	}
 	private void warmUpMethods() {
 		int[] orderTest = {1,2,3,4,5,6,7,8,9,10};
