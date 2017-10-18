@@ -1,5 +1,9 @@
 package arrays;
 
 public class Borough {
-	String name;
+	private String name;
+	
+	public Borough(String name) {
+		this.name = name;
+	}
 }
