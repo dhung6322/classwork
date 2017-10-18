@@ -17,6 +17,9 @@ public class ObjectMain {
 			String lastName = randomNameFrom(Person.LAST_START,
 					Person.LAST_MIDDLE, Person.LAST_END);
 			Borough home = randomBorough();
+			//BIG IDEA:
+			//In an Object array, you can have multiple data types
+			//unlike a primitive array
 			people[i]= new Person(firstName,lastName,home);
 		}
 	}
