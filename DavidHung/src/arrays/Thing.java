@@ -4,7 +4,7 @@ public class Thing {
 
 	private String description;
 	
-	public Thing() {
+	public Thing(String description) {
 		this.description = description;
 	}
 
