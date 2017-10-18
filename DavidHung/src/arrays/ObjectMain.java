@@ -3,14 +3,15 @@ package arrays;
 public class ObjectMain {
 
 	public ObjectMain() {
-		Person[] people = new Person[14];
+		Object[] people = new Object[14];
 		populate(people);
-		for(Person p: people) {
+		people[0] = new Thing("toaster oven");
+		for(Object p: people) {
 			System.out.println(p);
 		}
 	}
 
-	private void populate(Person[] people) {
+	private void populate(Object[] people) {
 		for(int i = 0; i < people.length; i++) {
 			String firstName = randomNameFrom(Person.FIRST_START,
 					Person.FIRST_MIDDLE, Person.FIRST_END);
