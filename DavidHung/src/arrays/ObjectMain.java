@@ -20,7 +20,13 @@ public class ObjectMain {
 			//BIG IDEA:
 			//In an Object array, you can have multiple data types
 			//unlike a primitive array
+			if(Math.random() < .6) {
+				int money = (int)(Math.random() * 100 + 1)*100000;
+				people[i] = new Athlete(firstName, lastName,home, money);
+			}
+			else {
 			people[i]= new Person(firstName,lastName,home);
+			}
 		}
 	}
 
