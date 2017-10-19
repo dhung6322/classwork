@@ -3,14 +3,19 @@ package arrays;
 public class ObjectMain {
 
 	public ObjectMain() {
-		Person[] people = new Person[1400];
+		Person[] people = new Person[14];
 		populate(people);
 		//people[0] = new Thing("toaster oven");
-		Person[] group = selectGroup(people, 1400);
+		//Person[] group = selectGroup(people, 1400);
 		/* for(Object p: group) {
 			System.out.println(p);
 		} */
-		analyzeCommonalities(people, group);
+		//analyzeCommonalities(people, group);
+		for(Person p : people) {
+			p.mingle(people);
+			System.out.println(p);
+			p.stateYourFriends();
+		}
 	}
 	
 	private void analyzeCommonalities(Person[] people, Person[] group) {
