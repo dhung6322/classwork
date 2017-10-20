@@ -3,8 +3,7 @@ package array2d;
 public class Main {
 
 	public static void main(String[] args) {
-		String[][] picture = new String[10][20];
-
+		Array2DSampler test = new Array2DSampler();
 	}
 	/**
 	 * PRECONDITION: i>= 0 and i <arr.length
