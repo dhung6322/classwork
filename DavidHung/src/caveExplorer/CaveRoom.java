@@ -38,11 +38,16 @@ public class CaveRoom {
 		//hint: to check if a door is null use:
 		//doors[0] = null OR USE doors[0] != null;
 		directions = "";
+		boolean doorFound = true;
 		for(int i = 0; i < doors.length; i++) {
 			if(doors[i] != null) {
-				directions += "There is a passage to " + toDirections(i) + ".";
+				doorFound = true;
+				directions += "There is a " + doors[i].getDescription() + "to " + toDirections(i) + ". " +
+				doors[i].getDetails() + "\n";
 			}
-				directions += "There is no way out. You are trapped in this room";
+		}
+		if(!doorFound) {
+			directions = "There is no way out. You are trapped in this room";
 		}
 	}
 	/**
