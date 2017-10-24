@@ -64,6 +64,80 @@ public class CaveRoom {
 		//this is how you should be thinking
 		return direction[dir];
 	}
+	
+	public void enter() {
+		contents = "X";
+	}
+	
+	public void leave() {
+		contents = defaultContents;
+	}
+	/**
+	 * This is how we join rooms together
+	 * It gives this room access to anotherRoom and vice-versa
+	 * It also puts the door between both rooms
+	 * @param direction
+	 * @param anotherRoom
+	 * @param door
+	 */
+	public void setConnection(int direction, CaveRoom anotherRoom, Door door) {
+		addRoom(direction, anotherRoom, door);
+		anotherRoom.addRoom(oppositeDirection(direction), this, door);
+	}
+	
+	public void addRoom(int dir, CaveRoom caveRoom, Door door) {
+		borderingRooms[dir] = caveRoom;
+		doors[dir] = door;
+		setDirections();
+	}
+	
+	public void interpretInput(String input) {
+		while(!isValid(input)) {
+			System.out.println("You can only enter 'w', 'a' , 's', or 'd'.");
+			input = CaveExplorer.in.nextLine();
+		}
+		int direction = "wdsa".indexOf(input);
+		goToRoom(direction);
+	}
+	/**
+	 * returns true if w,a,s, or d is the input but no if statements
+	 * @param input
+	 * @return
+	 */
+	private boolean isValid(String input) {
+		return "wdsa".indexOf(input) > -1 && input.length() == 1;
+		}
+	/**
+	 * THIS IS WHERE YOU EDIT YOUR CAVES
+	 */
+	public static void setUpCaves() {
+		
+	}
+	
+	public void goToRoom (int direction) {
+		//make sure there is a room to go to:
+		if(borderingRooms[direction] != null && doors[direction] != null &&
+				doors[direction].isOpen()) {
+			CaveExplorer.currentRoom.leave();
+			CaveExplorer.currentRoom = borderingRooms[direction];
+			CaveExplorer.currentRoom.enter();
+			CaveExplorer.inventory.updateMap();
+		} 
+		else {
+			//prints red text
+			System.err.println("You can't do that!");
+		}
+	}
+	
+	/**
+	 * returns the OPPOSITE direction
+	 * @param dir
+	 * @return
+	 */
+	public static int oppositeDirection(int dir) {
+		int[] opposite = {2,3,0,1};
+		return opposite[dir];
+	}
 
 	public void setDefaultContents(String defaultContents) {
 		this.defaultContents = defaultContents;
