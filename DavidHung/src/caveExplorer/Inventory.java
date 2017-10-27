@@ -7,7 +7,7 @@ public class Inventory {
 		
 	}
 
-	public String getDexcription() {
+	public String getDescription() {
 		return "There is nothing in your inventory.";
 	}
 	
