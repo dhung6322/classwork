@@ -9,10 +9,41 @@ public class TwoDArrayPractice {
 				row[col] = " ";
 			}
 		}
-		drawHorizontalLine(pic, 2);
+	 
+		/* drawHorizontalLine(pic, 2);
 		drawVerticalLine(pic,3);
-		drawSlot(pic, 4,6);
+		drawSlot(pic, 4,6); */
+		drawBox(pic, 5,8);
 		print(pic);
+	}
+	/**
+	 * A Box looks like this:
+	 * 		___
+	 * 		|*|
+	 * 		|_|
+	 * 
+	 * The '*' marks the coordinates of the box (it is not drawn)
+	 * Avoid an AIOOBE, but any portion of the Box that fits on the canvas
+	 * should be drawn
+	 * @param pic
+	 * @param i
+	 * @param j
+	 */
+	private static void drawBox(String[][] pic, int i, int j) {
+		drawSlot(pic, i,j);
+		drawSlot(pic, i+1, j);
+		drawAt("_",pic,i+1,j);
+		for(int col = j-1; col <= j+1; col++) {
+			drawAt("_",pic,i,col);
+		}
+	}
+	
+	private static void drawAt(String string, String[][] pic, int row, int col) {
+		//always check the row before the column
+		//because the row must exist before a column can exist in it
+		if(row >= 0 && row < pic.length && col >= 0 && col < pic[row].length) {
+			pic[row][col] = string;
+		}
 	}
 	/**
 	 * A slot looks like this:
@@ -25,7 +56,15 @@ public class TwoDArrayPractice {
 	 * @param j
 	 */
 	private static void drawSlot(String[][] pic, int i, int j) {
+		if(i >= 0 && i < pic.length) {
+		if(j > 0) {
+			pic[i][j-1] = "|";
+		}
+		if(j < pic[i].length-1) {
+			pic[i][j+1] = "|";
+		}
 		
+		}
 	}
 
 	private static void drawVerticalLine(String[][] pic, int col) {

@@ -11,10 +11,10 @@ public class CaveRoom {
 	private Door[] doors;
 	
 	//constants
-	private static final int NORTH = 0;
-	private static final int EAST = 1;
-	private static final int SOUTH = 2;
-	private static final int WEST = 3;
+	public static final int NORTH = 0;
+	public static final int EAST = 1;
+	public static final int SOUTH = 2;
+	public static final int WEST = 3;
 	
 	public CaveRoom(String description) {
 		this.description = description;
@@ -182,6 +182,9 @@ public class CaveRoom {
 
 	public void setContents(String contents) {
 		this.contents = contents;
+	}
+	public Door getDoor(int directions) {
+		return doors[directions];
 	}
 
 }
