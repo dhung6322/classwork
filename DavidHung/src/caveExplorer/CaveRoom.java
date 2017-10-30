@@ -25,6 +25,7 @@ public class CaveRoom {
 		doors = new Door[4];
 		setDirections();
 	}
+	
 	/**
 	 * for every Door in doors[] that is not null,
 	 * this method appends a String to 'descriptions' describing the door and where it is 
@@ -50,6 +51,7 @@ public class CaveRoom {
 			directions = "There is no way out. You are trapped in this room";
 		}
 	}
+	
 	/**
 	 * converts an int to a direction:
 	 * 0 -> "the North"
@@ -71,7 +73,8 @@ public class CaveRoom {
 	
 	public void leave() {
 		contents = defaultContents;
-	}
+	} 
+	
 	/**
 	 * This is how we join rooms together
 	 * It gives this room access to anotherRoom and vice-versa
@@ -99,6 +102,7 @@ public class CaveRoom {
 		int direction = "wdsa".indexOf(input);
 		goToRoom(direction);
 	}
+	
 	/**
 	 * returns true if w,a,s, or d is the input but no if statements
 	 * @param input
@@ -107,6 +111,7 @@ public class CaveRoom {
 	private boolean isValid(String input) {
 		return "wdsa".indexOf(input) > -1 && input.length() == 1;
 		}
+	
 	/**
 	 * THIS IS WHERE YOU EDIT YOUR CAVES
 	 */
