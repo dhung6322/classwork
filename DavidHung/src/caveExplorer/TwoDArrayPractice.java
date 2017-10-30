@@ -45,6 +45,7 @@ public class TwoDArrayPractice {
 			pic[row][col] = string;
 		}
 	}
+	
 	/**
 	 * A slot looks like this:
 	 *       | |
