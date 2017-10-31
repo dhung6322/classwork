@@ -113,7 +113,7 @@ public class CaveRoom {
 		}
 	
 	/**
-	 * THIS IS WHERE YOU EDIT YOUR CAVES
+	 * THIS IS WHERE YOU EDIT YOUR CAVES (change to incorporate NPCs?)
 	 */
 	public static void setUpCaves() {
 		//1. Determine size of Caves
