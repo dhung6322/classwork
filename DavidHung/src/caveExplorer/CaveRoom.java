@@ -96,24 +96,52 @@ public class CaveRoom {
 	
 	public void interpretInput(String input) {
 		while(!isValid(input)) {
-			System.out.println("You can only enter 'w', 'a' , 's', or 'd'.");
+			printValidMoves();
 			input = CaveExplorer.in.nextLine();
 		}
-		int direction = "wdsa".indexOf(input);
+		int direction = validMoves().indexOf(input);
+		if (direction < 4) {
 		goToRoom(direction);
+		}
+		else {
+			performaction(direction);
+		}
 	}
 	
+	/**
+	 * override to create response to keys other than wdsa
+	 * @param direction
+	 */
+	private void performaction(int direction) {
+		CaveExplorer.print("That key does nothing.");
+	}
+
+	/**
+	 * Override to change description of possible moves
+	 */
+	public void printValidMoves() {
+		System.out.println("You can only enter 'w', 'a' , 's', or 'd'.");
+	}
+	
+	/**
+	 * override to add more moves
+	 * @return
+	 */
+	public String validMoves() {
+		return "wdsa";
+	}
+
 	/**
 	 * returns true if w,a,s, or d is the input but no if statements
 	 * @param input
 	 * @return
 	 */
 	private boolean isValid(String input) {
-		return "wdsa".indexOf(input) > -1 && input.length() == 1;
+		return validMoves().indexOf(input) > -1 && input.length() == 1;
 		}
 	
 	/**
-	 * THIS IS WHERE YOU EDIT YOUR CAVES (change to incorporate NPCs?)
+	 * THIS IS WHERE YOU EDIT YOUR CAVES 
 	 */
 	public static void setUpCaves() {
 		//1. Determine size of Caves
