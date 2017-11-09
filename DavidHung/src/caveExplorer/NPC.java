@@ -86,7 +86,8 @@ public class NPC {
 
 	private int[] calculateMove() {
 		int[][] possibleMoves = {{-1,0},{0,1},{1,0},{0,-1}};
-		int index = 
+		int index = 0;
+		return index;
 	}
 
 }
