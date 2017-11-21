@@ -32,7 +32,7 @@ public class ReproductionAnimal extends RoamingAnimal {
 	
 	public ReproductionAnimal getOffspring(ReproductionAnimal mate) {
 				return new ReproductionAnimal(habitat, getDescription(),
-						Trait.getDominantTrait(getTrait1(),mate.getTrait2()),
+						Trait.getDominantTrait(getTrait1(),mate.getTrait1()),
 						Trait.getDominantTrait(getTrait2(), mate.getTrait2()));
 	}
 	
