@@ -58,10 +58,10 @@ public class Searching {
 		if(searchThis[middle] > target) {
 			return binarySearch(searchThis,startIndex,middle-1,target);
 		}
-		else if(searchThis[middle] < target) {
+		if(searchThis[middle] < target) {
 			return binarySearch(searchThis,middle+1,searchThis.length,target);
 		}
-		else if(searchThis[middle] == target) {
+		if(searchThis[middle] == target) {
 			return middle;
 		}
 		
