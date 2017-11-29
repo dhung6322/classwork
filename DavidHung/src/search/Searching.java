@@ -54,13 +54,18 @@ public class Searching {
 	}	
 	
 	public static int binarySearch(int[] searchThis, int startIndex, int endIndex, int target) {
-		int middle = startIndex - endIndex;
+		int middle = (int)(endIndex + startIndex)/2;
 		if(searchThis[middle] > target) {
-			
+			return binarySearch(searchThis,startIndex,middle-1,target);
 		}
-		if(searchThis[middle] < target) {
-			
+		else if(searchThis[middle] < target) {
+			return binarySearch(searchThis,middle+1,searchThis.length,target);
 		}
+		else if(searchThis[middle] == target) {
+			return middle;
+		}
+		
+			return -1;
 	}
 
 
