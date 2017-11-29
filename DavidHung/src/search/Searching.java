@@ -59,12 +59,11 @@ public class Searching {
 			return binarySearch(searchThis,startIndex,middle-1,target);
 		}
 		if(searchThis[middle] < target) {
-			return binarySearch(searchThis,middle+1,searchThis.length,target);
+			return binarySearch(searchThis,middle+1,endIndex,target);
 		}
 		if(searchThis[middle] == target) {
 			return middle;
 		}
-		
 			return -1;
 	}
 
