@@ -15,6 +15,9 @@ public class SimulatedForLoop {
 	}
 	
 	public static void forLoop(int n, Action a) {
-		
+		if(n > 0) {
+			a.act();
+			forLoop(n-1,a);
+		}
 	}
 }
