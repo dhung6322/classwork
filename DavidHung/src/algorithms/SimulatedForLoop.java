@@ -17,5 +17,4 @@ public class SimulatedForLoop {
 	public static void forLoop(int n, Action a) {
 		
 	}
-
 }
